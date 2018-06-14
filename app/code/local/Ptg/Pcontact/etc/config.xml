@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Ptg_Pcontact>
+      <version>0.1.0</version>
+    </Ptg_Pcontact>
+  </modules>
+  <frontend>
+    <routers>
+      <pcontact>
+        <use>standard</use>
+          <args>
+            <module>Ptg_Pcontact</module>
+            <frontName>pcontact</frontName>
+          </args>
+      </pcontact>
+    </routers>
+  </frontend>
+  <global>
+		<rewrite>        
+            <ptg_pcontact_contacts_indexcontroller>
+                <from><![CDATA[#^/contacts/index/#]]></from> <!-- Mage_Contacts_IndexController  -->
+                <to>/pcontact/contacts_index/</to> <!-- Ptg_Pcontact_Contacts_IndexController  -->
+            </ptg_pcontact_contacts_indexcontroller>
+		</rewrite>
+    <helpers>
+      <pcontact>
+        <class>Ptg_Pcontact_Helper</class>
+      </pcontact>
+    </helpers>
+  </global>
+  <admin>
+	<routers>
+	  <pcontact>
+	    <use>admin</use>
+		<args>
+		  <module>Ptg_Pcontact</module>
+		  <frontName>admin_pcontact</frontName>
+		</args>
+	  </pcontact>
+	</routers>
+  </admin>
+</config> 
